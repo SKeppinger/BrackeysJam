@@ -10,10 +10,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-# Quits game when button is pressed
-func _on_quit_pressed() -> void:
-	get_tree().quit()
+# Restart Level Button restarts current level
+func _on_restart_level_pressed() -> void:
+	pass
 
-# Starts level 1 when pressed
-func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/level/level.tscn")
+# Quit To Menu Button returns player to Title Screen
+func _on_quit_to_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")

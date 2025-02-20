@@ -62,7 +62,6 @@ texture = ExtResource("2_dbc8d")
 
 [node name="Bullet" parent="." instance=ExtResource("3_30cjc")]
 position = Vector2(182.102, 492.693)
-scale = Vector2(0.05, 0.05)
 
 [node name="Hostage" parent="." instance=ExtResource("5_svj52")]
 position = Vector2(427.062, 220.002)
