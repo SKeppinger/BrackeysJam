@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wmwsr"]
 size = Vector2(75.758, 332.399)
 
-[node name="Bullet" type="CharacterBody2D"]
+[node name="Bullet" type="CharacterBody2D" groups=["bullet"]]
 position = Vector2(0, -3.55271e-15)
 scale = Vector2(0.156275, 0.156275)
 script = ExtResource("1_c7cd0")

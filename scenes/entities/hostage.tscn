@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4qgk55k1eoea"]
+
+[ext_resource type="Texture2D" uid="uid://b0tmicutmrs5d" path="res://assets/hostage_temp.png" id="1_ckisp"]
+[ext_resource type="Script" path="res://scenes/entities/entity.gd" id="1_keurr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gdg66"]
+radius = 128.0
+
+[node name="Hostage" type="Area2D" groups=["hostage"]]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_keurr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ckisp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gdg66")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
