@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bybpi3mb3ch41"]
+[gd_scene load_steps=10 format=3 uid="uid://bybpi3mb3ch41"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_jvlfj"]
 [ext_resource type="Texture2D" uid="uid://b1l7u2jopauws" path="res://assets/portal_tile_24x24_black_chocolate_close_up_1.png" id="1_lvcir"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://7cco8vs3ujcd" path="res://scenes/bullet/bullet.tscn" id="3_30cjc"]
 [ext_resource type="PackedScene" uid="uid://b4qgk55k1eoea" path="res://scenes/entities/hostage.tscn" id="5_svj52"]
 [ext_resource type="PackedScene" uid="uid://7rlisy6fltdx" path="res://scenes/entities/enemy.tscn" id="6_f5vjv"]
+[ext_resource type="PackedScene" uid="uid://d4jd5ckhspu2s" path="res://scenes/portal/portal.tscn" id="7_et3nx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr1ax"]
 size = Vector2(31, 600.5)
@@ -61,10 +62,18 @@ texture = ExtResource("2_dbc8d")
 
 [node name="Bullet" parent="." instance=ExtResource("3_30cjc")]
 position = Vector2(182.102, 492.693)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.05, 0.05)
 
 [node name="Hostage" parent="." instance=ExtResource("5_svj52")]
 position = Vector2(427.062, 220.002)
 
 [node name="Enemy" parent="." instance=ExtResource("6_f5vjv")]
 position = Vector2(115.547, 286.557)
+
+[node name="Portal" parent="." node_paths=PackedStringArray("partner") instance=ExtResource("7_et3nx")]
+position = Vector2(315.212, 318.91)
+partner = NodePath("../Portal2")
+
+[node name="Portal2" parent="." node_paths=PackedStringArray("partner") instance=ExtResource("7_et3nx")]
+position = Vector2(209.834, 119.245)
+partner = NodePath("../Portal")
