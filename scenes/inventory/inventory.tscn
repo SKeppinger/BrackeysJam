@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw5mfj181k0uo"]
+
+[ext_resource type="Script" path="res://scenes/inventory/inventory.gd" id="1_6x36j"]
+[ext_resource type="PackedScene" uid="uid://k3go02vj0m4f" path="res://scenes/inventory/item.tscn" id="2_84v0e"]
+
+[node name="Inventory" type="ColorRect"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.140447, 0.140447, 0.140447, 1)
+script = ExtResource("1_6x36j")
+
+[node name="Item" parent="." instance=ExtResource("2_84v0e")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 158.0
+offset_top = 170.0
+offset_right = 465.0
+offset_bottom = 477.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Item2" parent="." instance=ExtResource("2_84v0e")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 530.0
+offset_top = 143.0
+offset_right = 658.0
+offset_bottom = 271.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Item3" parent="." instance=ExtResource("2_84v0e")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 806.0
+offset_top = 188.0
+offset_right = 934.0
+offset_bottom = 316.0
+grow_horizontal = 1
+grow_vertical = 1
