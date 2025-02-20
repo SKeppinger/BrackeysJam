@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdj87t1on3aao"]
+[gd_scene load_steps=4 format=3 uid="uid://bdj87t1on3aao"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_f82u4"]
+[ext_resource type="FontFile" uid="uid://ccryk4uiat803" path="res://assets/fonts/SunnyspellsRegular-MV9ze.otf" id="2_xw5p0"]
+[ext_resource type="PackedScene" uid="uid://bybpi3mb3ch41" path="res://scenes/level/level.tscn" id="3_7fycj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -24,14 +26,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -54.5
-offset_top = -24.0
-offset_right = 54.5
-offset_bottom = 24.0
+offset_left = -397.0
+offset_top = -2.5
+offset_right = -275.0
+offset_bottom = 66.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("2_xw5p0")
+theme_override_font_sizes/font_size = 75
 text = "PLAY"
 flat = true
 
@@ -42,17 +45,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = 23.5
-offset_right = 46.0
-offset_bottom = 80.5
+offset_left = -393.5
+offset_top = 84.5
+offset_right = -278.5
+offset_bottom = 153.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("2_xw5p0")
+theme_override_font_sizes/font_size = 75
 text = "QUIT
 "
 flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -537.5
+offset_top = -272.5
+offset_right = -134.5
+offset_bottom = -111.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_xw5p0")
+theme_override_font_sizes/font_size = 200
+text = "Misfire"
+
+[node name="Area2D" parent="." instance=ExtResource("3_7fycj")]
+position = Vector2(500, -4)
 
 [connection signal="pressed" from="ColorRect/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ColorRect/Quit" to="." method="_on_quit_pressed"]
