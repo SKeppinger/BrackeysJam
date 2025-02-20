@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ln8w5jsoyhm0"]
+
+[ext_resource type="Script" path="res://scenes/gravity_well/gravity_well.gd" id="1_skorr"]
+[ext_resource type="Texture2D" uid="uid://57dv3kd5h2nf" path="res://assets/gravity_temp.png" id="2_o1nfy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uiho0"]
+radius = 128.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xp2ja"]
+radius = 1024.0
+
+[node name="GravityWell" type="Area2D" groups=["gravity_well"]]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_skorr")
+gravity_strength = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uiho0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_o1nfy")
+
+[node name="Area2D" type="Area2D" parent="."]
+gravity_space_override = 1
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xp2ja")

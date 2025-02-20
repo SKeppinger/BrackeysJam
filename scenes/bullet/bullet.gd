@@ -10,9 +10,12 @@ func _ready() -> void:
 	rotation = dir * PI / 180
 
 func _physics_process(delta: float) -> void:
+	velocity += get_gravity() # for the gravity well, default is 0 so it won't affect the bullet if there is no gravity well
+	# stop velocity from getting too fast using gravity
+	if velocity.length() > SPEED * 1.5:
+		velocity = velocity.normalized() * SPEED * 1.5
 	var collision = move_and_collide(velocity * delta)
-	if collision:
+	if collision and not collision.get_collider().is_in_group("gravity_well"):
 		var normal = collision.get_normal()
 		velocity = velocity.bounce(normal)
-		rotation = velocity.angle() + PI / 2
-		print(rotation)
+	rotation = velocity.angle() + PI / 2
