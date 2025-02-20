@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2m6pip8vri1i"]
+
+[ext_resource type="Script" path="res://scenes/lose_screen/lose_screen.gd" id="1_panom"]
+[ext_resource type="FontFile" uid="uid://ccryk4uiat803" path="res://assets/fonts/SunnyspellsRegular-MV9ze.otf" id="2_auica"]
+
+[node name="LoseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_panom")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -1.0
+offset_right = 1153.0
+offset_bottom = 647.0
+color = Color(0.552941, 0, 0, 1)
+
+[node name="Restart Level" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = 112.5
+offset_right = 110.0
+offset_bottom = 161.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_auica")
+theme_override_font_sizes/font_size = 50
+text = "Restart Level"
+flat = true
+
+[node name="Quit To Menu" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -144.0
+offset_right = 110.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_auica")
+theme_override_font_sizes/font_size = 50
+text = "Quit to Menu"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_auica")
+theme_override_font_sizes/font_size = 150
+text = "YOU LOSE"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[connection signal="pressed" from="ColorRect/Restart Level" to="." method="_on_restart_level_pressed"]
+[connection signal="pressed" from="ColorRect/Quit To Menu" to="." method="_on_quit_to_menu_pressed"]
