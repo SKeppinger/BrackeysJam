@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const dir = 30
+const dir = 90
 const SPEED = 400.0
 #const JUMP_VELOCITY = 1.0
 
@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	velocity += get_gravity() # for the gravity well, default is 0 so it won't affect the bullet if there is no gravity well
-	# stop velocity from getting too fast using gravity
+	# stop velocity from changing using gravity
 	if velocity.length() > SPEED * 1.5:
 		velocity = velocity.normalized() * SPEED * 1.5
 	var collision = move_and_collide(velocity * delta)

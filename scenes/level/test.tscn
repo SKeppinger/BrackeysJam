@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://5xeb6j84xve0"]
+
+[ext_resource type="Script" path="res://scenes/level/level.gd" id="1_cbj7w"]
+[ext_resource type="Texture2D" uid="uid://b1l7u2jopauws" path="res://assets/portal_tile_24x24_black_chocolate_close_up_1.png" id="2_5df67"]
+[ext_resource type="Texture2D" uid="uid://bmgq4gg4x2qlw" path="res://assets/wall.jpg" id="3_be8ni"]
+[ext_resource type="PackedScene" uid="uid://7cco8vs3ujcd" path="res://scenes/bullet/bullet.tscn" id="4_2vpox"]
+[ext_resource type="PackedScene" uid="uid://7rlisy6fltdx" path="res://scenes/entities/enemy.tscn" id="5_dbfcg"]
+[ext_resource type="PackedScene" uid="uid://ln8w5jsoyhm0" path="res://scenes/gravity_well/gravity_well.tscn" id="7_pu0s0"]
+[ext_resource type="PackedScene" uid="uid://b4qgk55k1eoea" path="res://scenes/entities/hostage.tscn" id="8_agcim"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr1ax"]
+size = Vector2(31, 600.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmrmc"]
+size = Vector2(602, 30.5)
+
+[node name="Area2D" type="Node2D"]
+script = ExtResource("1_cbj7w")
+
+[node name="Floor Sprite" type="Sprite2D" parent="."]
+position = Vector2(300, 300)
+texture = ExtResource("2_5df67")
+
+[node name="Wall Collision" type="StaticBody2D" parent="."]
+
+[node name="Right Wall" type="CollisionShape2D" parent="Wall Collision"]
+position = Vector2(585, 301)
+shape = SubResource("RectangleShape2D_wr1ax")
+
+[node name="Left Wall" type="CollisionShape2D" parent="Wall Collision"]
+position = Vector2(15, 300.25)
+shape = SubResource("RectangleShape2D_wr1ax")
+
+[node name="Up Wall" type="CollisionShape2D" parent="Wall Collision"]
+position = Vector2(300, 15)
+shape = SubResource("RectangleShape2D_pmrmc")
+
+[node name="Down Wall" type="CollisionShape2D" parent="Wall Collision"]
+position = Vector2(300, 585)
+shape = SubResource("RectangleShape2D_pmrmc")
+
+[node name="Up Sprite" type="Sprite2D" parent="."]
+position = Vector2(300, 14.798)
+scale = Vector2(2.4, 0.0595474)
+texture = ExtResource("3_be8ni")
+
+[node name="Bottom Sprite" type="Sprite2D" parent="."]
+position = Vector2(300, 584.897)
+scale = Vector2(2.4, 0.0599461)
+texture = ExtResource("3_be8ni")
+
+[node name="Right Sprite" type="Sprite2D" parent="."]
+position = Vector2(585, 301)
+scale = Vector2(0.12, 1.20724)
+texture = ExtResource("3_be8ni")
+
+[node name="Left Sprite" type="Sprite2D" parent="."]
+position = Vector2(15, 300)
+scale = Vector2(0.12, 1.20724)
+texture = ExtResource("3_be8ni")
+
+[node name="Bullet" parent="." instance=ExtResource("4_2vpox")]
+position = Vector2(93, 166)
+
+[node name="Enemy" parent="." instance=ExtResource("5_dbfcg")]
+position = Vector2(318, 245)
+
+[node name="GravityWell" parent="." instance=ExtResource("7_pu0s0")]
+position = Vector2(235, 235)
+
+[node name="Hostage" parent="." instance=ExtResource("8_agcim")]
+position = Vector2(322, 467)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_dbfcg")]
+position = Vector2(294, 196)
+
+[node name="Enemy3" parent="." instance=ExtResource("5_dbfcg")]
+position = Vector2(236, 178)
+
+[node name="Enemy4" parent="." instance=ExtResource("5_dbfcg")]
+position = Vector2(173, 203)
+
+[node name="Enemy5" parent="." instance=ExtResource("5_dbfcg")]
+position = Vector2(171, 252)
