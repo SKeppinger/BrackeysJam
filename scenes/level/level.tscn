@@ -94,4 +94,5 @@ rotation = 1.5708
 position = Vector2(50, 226)
 
 [node name="Corner" parent="." instance=ExtResource("10_v4v04")]
-position = Vector2(92, 533)
+position = Vector2(127, 539)
+rotation = -0.785398
