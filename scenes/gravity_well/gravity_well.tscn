@@ -1,10 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://ln8w5jsoyhm0"]
+[gd_scene load_steps=7 format=3 uid="uid://ln8w5jsoyhm0"]
 
 [ext_resource type="Script" path="res://scenes/gravity_well/gravity_well.gd" id="1_skorr"]
 [ext_resource type="Texture2D" uid="uid://57dv3kd5h2nf" path="res://assets/gravity_temp.png" id="2_o1nfy"]
+[ext_resource type="Shader" path="res://scenes/gravity_well/gravity_well.gdshader" id="2_t3td7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uiho0"]
 radius = 128.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_stdr0"]
+shader = ExtResource("2_t3td7")
+shader_parameter/strength = 0.05
+shader_parameter/black_radius = 0.75
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xp2ja"]
 radius = 1024.0
@@ -18,6 +24,8 @@ gravity_strength = 0.1
 shape = SubResource("CircleShape2D_uiho0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_stdr0")
+scale = Vector2(4, 4)
 texture = ExtResource("2_o1nfy")
 
 [node name="Area2D" type="Area2D" parent="."]
