@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const dir = 90
-const SPEED = 400.0
+@export var dir = 0
+@export var SPEED = 400.0
 #const JUMP_VELOCITY = 1.0
 
 func _ready() -> void:

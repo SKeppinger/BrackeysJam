@@ -64,6 +64,7 @@ texture = ExtResource("2_dbc8d")
 
 [node name="Bullet" parent="." instance=ExtResource("3_30cjc")]
 position = Vector2(182.102, 492.693)
+dir = 30
 
 [node name="Enemy" parent="." instance=ExtResource("6_f5vjv")]
 position = Vector2(115.547, 286.557)
@@ -73,7 +74,7 @@ position = Vector2(315.212, 318.91)
 partner = NodePath("../Portal2")
 
 [node name="Portal2" parent="." node_paths=PackedStringArray("partner") instance=ExtResource("7_et3nx")]
-position = Vector2(209.834, 119.245)
+position = Vector2(225, 85)
 partner = NodePath("../Portal")
 
 [node name="GravityWell" parent="." instance=ExtResource("7_ny1xu")]
@@ -83,16 +84,12 @@ position = Vector2(238, 247)
 position = Vector2(432, 246)
 
 [node name="Wall" parent="." instance=ExtResource("9_jvpa2")]
-position = Vector2(227, 54)
-rotation = 1.5708
+position = Vector2(389, 86)
+rotation = -0.785398
 
 [node name="Wall2" parent="." instance=ExtResource("9_jvpa2")]
-position = Vector2(314, 547)
-rotation = 1.5708
-
-[node name="Wall3" parent="." instance=ExtResource("9_jvpa2")]
-position = Vector2(50, 226)
+position = Vector2(330, 511)
+rotation = 0.785398
 
 [node name="Corner" parent="." instance=ExtResource("10_v4v04")]
-position = Vector2(127, 539)
-rotation = -0.785398
+position = Vector2(100, 551)

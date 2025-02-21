@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ln8w5jsoyhm0"]
+[gd_scene load_steps=9 format=3 uid="uid://ln8w5jsoyhm0"]
 
 [ext_resource type="Script" path="res://scenes/gravity_well/gravity_well.gd" id="1_skorr"]
 [ext_resource type="Texture2D" uid="uid://57dv3kd5h2nf" path="res://assets/gravity_temp.png" id="2_o1nfy"]
 [ext_resource type="Shader" path="res://scenes/gravity_well/gravity_well.gdshader" id="2_t3td7"]
+[ext_resource type="Texture2D" uid="uid://bh8ahdugca70t" path="res://assets/gravity_particle.png" id="4_v6lxv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uiho0"]
 radius = 128.0
@@ -14,6 +15,23 @@ shader_parameter/black_radius = 0.75
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xp2ja"]
 radius = 1024.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pod03"]
+lifetime_randomness = 0.08
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1024.0
+emission_ring_radius = 1024.0
+emission_ring_inner_radius = 512.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -90.0
+radial_accel_max = -2.23517e-06
+scale_min = 0.1
+scale_max = 0.2
+scale_over_velocity_max = 87.4
+hue_variation_min = -0.1
+hue_variation_max = 0.1
 
 [node name="GravityWell" type="Area2D" groups=["gravity_well"]]
 scale = Vector2(0.1, 0.1)
@@ -37,3 +55,9 @@ gravity = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_xp2ja")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 64
+process_material = SubResource("ParticleProcessMaterial_pod03")
+texture = ExtResource("4_v6lxv")
+trail_lifetime = 0.5

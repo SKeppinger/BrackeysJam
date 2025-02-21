@@ -76,7 +76,7 @@ theme_override_font_sizes/font_size = 200
 text = "Misfire"
 
 [node name="Area2D" parent="." instance=ExtResource("3_7fycj")]
-position = Vector2(500, -4)
+position = Vector2(525, 23)
 
 [connection signal="pressed" from="ColorRect/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ColorRect/Quit" to="." method="_on_quit_pressed"]
