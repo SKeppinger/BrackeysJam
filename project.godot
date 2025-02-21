@@ -25,7 +25,8 @@ bullet=""
 enemy=""
 hostage=""
 portal=""
-<<<<<<<HEADgravity_well=""
+gravity_well=""
+bouncer=""
 
 [input]
 

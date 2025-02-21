@@ -15,7 +15,9 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() > SPEED * 1.5:
 		velocity = velocity.normalized() * SPEED * 1.5
 	var collision = move_and_collide(velocity * delta)
-	if collision and not collision.get_collider().is_in_group("gravity_well"):
+	if collision and collision.get_collider().is_in_group("bouncer"):
 		var normal = collision.get_normal()
 		velocity = velocity.bounce(normal)
+	elif collision:
+		queue_free()
 	rotation = velocity.angle() + PI / 2

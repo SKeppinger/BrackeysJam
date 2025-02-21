@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bybpi3mb3ch41"]
+[gd_scene load_steps=13 format=3 uid="uid://bybpi3mb3ch41"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_jvlfj"]
 [ext_resource type="Texture2D" uid="uid://b1l7u2jopauws" path="res://assets/portal_tile_24x24_black_chocolate_close_up_1.png" id="1_lvcir"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://7rlisy6fltdx" path="res://scenes/entities/enemy.tscn" id="6_f5vjv"]
 [ext_resource type="PackedScene" uid="uid://d4jd5ckhspu2s" path="res://scenes/portal/portal.tscn" id="7_et3nx"]
 [ext_resource type="PackedScene" uid="uid://ln8w5jsoyhm0" path="res://scenes/gravity_well/gravity_well.tscn" id="7_ny1xu"]
+[ext_resource type="PackedScene" uid="uid://bcmy7oah35r0f" path="res://scenes/bouncers/wall.tscn" id="9_jvpa2"]
+[ext_resource type="PackedScene" uid="uid://pg6rgbxsai7b" path="res://scenes/bouncers/corner.tscn" id="10_v4v04"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr1ax"]
 size = Vector2(31, 600.5)
@@ -79,3 +81,17 @@ position = Vector2(238, 247)
 
 [node name="Hostage" parent="." instance=ExtResource("5_svj52")]
 position = Vector2(432, 246)
+
+[node name="Wall" parent="." instance=ExtResource("9_jvpa2")]
+position = Vector2(227, 54)
+rotation = 1.5708
+
+[node name="Wall2" parent="." instance=ExtResource("9_jvpa2")]
+position = Vector2(314, 547)
+rotation = 1.5708
+
+[node name="Wall3" parent="." instance=ExtResource("9_jvpa2")]
+position = Vector2(50, 226)
+
+[node name="Corner" parent="." instance=ExtResource("10_v4v04")]
+position = Vector2(92, 533)

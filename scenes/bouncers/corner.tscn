@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://pg6rgbxsai7b"]
+
+[ext_resource type="Texture2D" uid="uid://bmgq4gg4x2qlw" path="res://assets/wall.jpg" id="1_3r2gf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5syw"]
+size = Vector2(10, 64)
+
+[node name="Corner" type="StaticBody2D" groups=["bouncer"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_n5syw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32.4375)
+scale = Vector2(0.04, 0.126509)
+texture = ExtResource("1_3r2gf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(27, -6)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_n5syw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(27, -6)
+rotation = 1.5708
+scale = Vector2(0.04, 0.126509)
+texture = ExtResource("1_3r2gf")
