@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcmy7oah35r0f"]
+[gd_scene load_steps=4 format=3 uid="uid://bcmy7oah35r0f"]
 
 [ext_resource type="Texture2D" uid="uid://bmgq4gg4x2qlw" path="res://assets/wall.jpg" id="1_l0cdq"]
+[ext_resource type="PackedScene" uid="uid://cuvpetq04cs55" path="res://scenes/draggable/draggable.tscn" id="2_vtim7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttvtq"]
 size = Vector2(10, 128)
@@ -14,3 +15,9 @@ shape = SubResource("RectangleShape2D_ttvtq")
 position = Vector2(4.76837e-07, 0.125)
 scale = Vector2(0.04, 0.257042)
 texture = ExtResource("1_l0cdq")
+
+[node name="draggable" parent="." instance=ExtResource("2_vtim7")]
+offset_left = -9.0
+offset_top = -67.0
+offset_right = 9.0
+offset_bottom = 68.0

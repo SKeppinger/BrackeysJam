@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw5mfj181k0uo"]
+
+[ext_resource type="Script" path="res://scenes/draggable/draggable_area/draggable_area.gd" id="1_6x36j"]
+
+[node name="Level" type="ColorRect"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.141176, 0.141176, 0.141176, 0)
+script = ExtResource("1_6x36j")

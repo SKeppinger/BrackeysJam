@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4jd5ckhspu2s"]
+[gd_scene load_steps=5 format=3 uid="uid://d4jd5ckhspu2s"]
 
 [ext_resource type="Script" path="res://scenes/portal/portal.gd" id="1_3fsru"]
 [ext_resource type="Texture2D" uid="uid://cdign5j5312x1" path="res://assets/portal_temp.png" id="1_oq66f"]
+[ext_resource type="PackedScene" uid="uid://cuvpetq04cs55" path="res://scenes/draggable/draggable.tscn" id="3_td14e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7201x"]
 radius = 128.0
@@ -18,5 +19,16 @@ shape = SubResource("CircleShape2D_7201x")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 200)
+
+[node name="draggable" parent="." instance=ExtResource("3_td14e")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -137.5
+offset_right = 137.5
+offset_bottom = 137.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

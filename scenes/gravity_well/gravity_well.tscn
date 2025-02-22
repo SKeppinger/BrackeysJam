@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ln8w5jsoyhm0"]
+[gd_scene load_steps=10 format=3 uid="uid://ln8w5jsoyhm0"]
 
 [ext_resource type="Script" path="res://scenes/gravity_well/gravity_well.gd" id="1_skorr"]
 [ext_resource type="Texture2D" uid="uid://57dv3kd5h2nf" path="res://assets/gravity_temp.png" id="2_o1nfy"]
 [ext_resource type="Shader" path="res://scenes/gravity_well/gravity_well.gdshader" id="2_t3td7"]
 [ext_resource type="Texture2D" uid="uid://bh8ahdugca70t" path="res://assets/gravity_particle.png" id="4_v6lxv"]
+[ext_resource type="PackedScene" uid="uid://cuvpetq04cs55" path="res://scenes/draggable/draggable.tscn" id="5_ugj2b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uiho0"]
 radius = 128.0
@@ -61,3 +62,14 @@ amount = 64
 process_material = SubResource("ParticleProcessMaterial_pod03")
 texture = ExtResource("4_v6lxv")
 trail_lifetime = 0.5
+
+[node name="draggable" parent="." instance=ExtResource("5_ugj2b")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0

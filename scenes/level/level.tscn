@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bybpi3mb3ch41"]
+[gd_scene load_steps=16 format=3 uid="uid://bybpi3mb3ch41"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_jvlfj"]
 [ext_resource type="Texture2D" uid="uid://b1l7u2jopauws" path="res://assets/portal_tile_24x24_black_chocolate_close_up_1.png" id="1_lvcir"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://ln8w5jsoyhm0" path="res://scenes/gravity_well/gravity_well.tscn" id="7_ny1xu"]
 [ext_resource type="PackedScene" uid="uid://bcmy7oah35r0f" path="res://scenes/bouncers/wall.tscn" id="9_jvpa2"]
 [ext_resource type="PackedScene" uid="uid://pg6rgbxsai7b" path="res://scenes/bouncers/corner.tscn" id="10_v4v04"]
+[ext_resource type="PackedScene" uid="uid://de64cvcxk2xvi" path="res://scenes/inventory/inventory.tscn" id="11_ab0y2"]
+[ext_resource type="PackedScene" uid="uid://cel4350f1mliv" path="res://scenes/inventory/item_container/item_container.tscn" id="12_5budp"]
+[ext_resource type="PackedScene" uid="uid://dw5mfj181k0uo" path="res://scenes/draggable/draggable_area/draggable_area.tscn" id="13_vnchs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr1ax"]
 size = Vector2(31, 600.5)
@@ -17,7 +20,7 @@ size = Vector2(31, 600.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmrmc"]
 size = Vector2(602, 30.5)
 
-[node name="Area2D" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_jvlfj")
 
 [node name="Floor Sprite" type="Sprite2D" parent="."]
@@ -62,6 +65,8 @@ position = Vector2(15, 300)
 scale = Vector2(0.12, 1.20724)
 texture = ExtResource("2_dbc8d")
 
+[node name="DraggableArea" parent="." instance=ExtResource("13_vnchs")]
+
 [node name="Bullet" parent="." instance=ExtResource("3_30cjc")]
 position = Vector2(182.102, 492.693)
 dir = 30
@@ -93,3 +98,31 @@ rotation = 0.785398
 
 [node name="Corner" parent="." instance=ExtResource("10_v4v04")]
 position = Vector2(100, 551)
+
+[node name="Inventory" parent="." instance=ExtResource("11_ab0y2")]
+offset_left = 709.0
+offset_top = 119.0
+offset_right = 789.0
+offset_bottom = 159.0
+
+[node name="Item" parent="Inventory" instance=ExtResource("12_5budp")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 1
+grow_vertical = 1
+item = ExtResource("7_et3nx")
+
+[node name="Item2" parent="Inventory" instance=ExtResource("12_5budp")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_vertical = 1
+item = ExtResource("7_ny1xu")
