@@ -1,21 +1,61 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4jd5ckhspu2s"]
+[gd_scene load_steps=10 format=3 uid="uid://d4jd5ckhspu2s"]
 
 [ext_resource type="Script" path="res://scenes/portal/portal.gd" id="1_3fsru"]
-[ext_resource type="Texture2D" uid="uid://cdign5j5312x1" path="res://assets/portal_temp.png" id="1_oq66f"]
+[ext_resource type="Texture2D" uid="uid://duytqojbmb4ij" path="res://assets/portal_sprite_sheet.svg" id="3_o2nbg"]
 [ext_resource type="PackedScene" uid="uid://cuvpetq04cs55" path="res://scenes/draggable/draggable.tscn" id="3_td14e"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7201x"]
-radius = 128.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_t46yh"]
+atlas = ExtResource("3_o2nbg")
+region = Rect2(0, 0, 1080, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix1oa"]
+atlas = ExtResource("3_o2nbg")
+region = Rect2(0, 270, 1080, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh7ga"]
+atlas = ExtResource("3_o2nbg")
+region = Rect2(0, 540, 1080, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36n72"]
+atlas = ExtResource("3_o2nbg")
+region = Rect2(0, 810, 1080, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5nn5f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t46yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix1oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh7ga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36n72")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4odot"]
+radius = 60.0
+height = 600.0
 
 [node name="Portal" type="Area2D" groups=["portal"]]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_3fsru")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_oq66f")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5nn5f")
+autoplay = "default"
+frame_progress = 0.817338
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_7201x")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4odot")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 200)
