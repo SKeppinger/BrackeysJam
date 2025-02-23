@@ -14,3 +14,10 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	set_drag_preview(preview)
 	
 	return parent
+
+func _on_gui_input(event):
+	if event.is_action_pressed("delete"):
+		print(parent.name)
+		if parent is Portal:
+			parent.partner.queue_free()
+		parent.queue_free()

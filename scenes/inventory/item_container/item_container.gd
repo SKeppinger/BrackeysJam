@@ -12,6 +12,7 @@ func setup(cell_size) -> void:
 	add_child(item_preview)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
+	
 	var item_preview = item.instantiate()
 	
 	var preview = Control.new()
