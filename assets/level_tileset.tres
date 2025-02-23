@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://pg6rgbxsai7b" path="res://scenes/bouncers/corner.tscn" id="3_7nr2x"]
 [ext_resource type="PackedScene" uid="uid://c7mm630w1dga0" path="res://scenes/bouncers/pan.tscn" id="4_wjtxy"]
 
+[sub_resource type="TileSet" id="TileSet_kym3o"]
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ig6rj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1a1r"]
@@ -90,7 +91,7 @@ texture = ExtResource("1_dwbed")
 28:8/0 = 0
 28:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10.6667, 32, -10, 32, 10.6667, -32, 10.6667)
 
-[sub_resource type="TileSet" id="TileSet_kym3o"]
+[resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_ig6rj")

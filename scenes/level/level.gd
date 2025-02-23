@@ -16,15 +16,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Restarts the level when player presses 'R'
-	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene()
 	match state:
 		State.SETUP:
 			# Handle placing/moving objects here
 			# Shoot when the player ends the setup phase
 			if Input.is_action_just_pressed("ui_accept"): # we can change the key for this later
-				shooter.shoot()
+				play()
 		State.SIMULATE:
+			if Input.is_action_just_pressed("restart"):
+				restart()
 			# Don't let the player move or place objects
 			# At end of bullet's lifetime (we still need to determine when that is),
 			# destroy the bullet and check if all enemies are dead and no hostages are dead.
@@ -32,3 +32,11 @@ func _process(delta):
 			# If the level is completed, give option to move directly to next level or 
 			# return to level select with the next level unlocked.
 			pass
+
+func play():
+	shooter.shoot()
+	state = State.SIMULATE
+
+func restart():
+	get_tree().reload_current_scene()
+	state = State.SETUP

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://de64cvcxk2xvi" path="res://scenes/inventory/inventory.tscn" id="11_ab0y2"]
 [ext_resource type="PackedScene" uid="uid://cel4350f1mliv" path="res://scenes/inventory/item_container/item_container.tscn" id="12_5budp"]
 [ext_resource type="PackedScene" uid="uid://dw5mfj181k0uo" path="res://scenes/draggable/draggable_area/draggable_area.tscn" id="13_vnchs"]
-[ext_resource type="PackedScene" uid="uid://c7mm630w1dga0" path="res://scenes/bouncers/pan.tscn" id="14_uar2a"]
+[ext_resource type="PackedScene" path="res://scenes/bouncers/pan.tscn" id="14_uar2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr1ax"]
 size = Vector2(31, 600.5)
@@ -70,6 +70,7 @@ texture = ExtResource("2_dbc8d")
 
 [node name="Bullet" parent="." instance=ExtResource("3_30cjc")]
 position = Vector2(182.102, 492.693)
+dir = 30
 rotation = 0.523599
 
 [node name="Enemy" parent="." instance=ExtResource("6_f5vjv")]
@@ -85,6 +86,7 @@ partner = NodePath("../Portal")
 
 [node name="GravityWell" parent="." instance=ExtResource("7_ny1xu")]
 position = Vector2(238, 247)
+scale = Vector2(-0.0599999, -0.0599999)
 
 [node name="Hostage" parent="." instance=ExtResource("5_svj52")]
 position = Vector2(381, 193)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cel4350f1mliv"]
+[gd_scene load_steps=3 format=3 uid="uid://cel4350f1mliv"]
 
 [ext_resource type="Script" path="res://scenes/inventory/item_container/item_container.gd" id="1_npl1g"]
+[ext_resource type="Texture2D" uid="uid://cds8klm62mhjb" path="res://assets/item_cell.png" id="2_xtbna"]
 
 [node name="Item" type="Control"]
 clip_contents = true
@@ -8,9 +9,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1112.0
-offset_bottom = -608.0
+offset_right = -1088.0
+offset_bottom = -584.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_npl1g")
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("2_xtbna")
