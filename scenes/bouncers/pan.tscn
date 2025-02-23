@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7mm630w1dga0"]
+
+[ext_resource type="Texture2D" uid="uid://cr6gewxlqvxoa" path="res://assets/Pan.png" id="1_u1i8y"]
+[ext_resource type="PackedScene" uid="uid://cuvpetq04cs55" path="res://scenes/draggable/draggable.tscn" id="2_2swwg"]
+
+[node name="Pan" type="StaticBody2D" groups=["bouncer"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.2, 0.2)
+polygon = PackedVector2Array(-101, -33, -134, -64, -145, -98, -138, -125, -112, -145, -138, -143, -125, -150, -101, -157, -65, -160, -40, -156, 14, -141, 40, -125, 64, -108, 85, -85, 99, -62, 105, -45, 105, -35, 105, -20, 104, -4, 97, 14, 105, -10, 103, -33, 90, -65, 60, -101, 77, -54, 67, -18, 35, -2, -5, -1, -59, -12)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0.125)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_u1i8y")
+
+[node name="draggable" parent="." instance=ExtResource("2_2swwg")]
+offset_left = -9.0
+offset_top = -67.0
+offset_right = 9.0
+offset_bottom = 68.0
