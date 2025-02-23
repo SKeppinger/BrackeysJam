@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7mm630w1dga0"]
+[gd_scene load_steps=3 format=3 uid="uid://d1nvcexqedmvp"]
 
 [ext_resource type="Texture2D" uid="uid://cr6gewxlqvxoa" path="res://assets/Pan.png" id="1_u1i8y"]
 [ext_resource type="PackedScene" uid="uid://cuvpetq04cs55" path="res://scenes/draggable/draggable.tscn" id="2_2swwg"]
@@ -15,7 +15,7 @@ scale = Vector2(0.02, 0.02)
 texture = ExtResource("1_u1i8y")
 
 [node name="draggable" parent="." instance=ExtResource("2_2swwg")]
-offset_left = -9.0
-offset_top = -67.0
-offset_right = 9.0
-offset_bottom = 68.0
+offset_left = -42.0
+offset_top = -35.0
+offset_right = 40.0
+offset_bottom = 34.0

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_jvlfj"]
 [ext_resource type="Texture2D" uid="uid://b1l7u2jopauws" path="res://assets/portal_tile_24x24_black_chocolate_close_up_1.png" id="1_lvcir"]
-[ext_resource type="Texture2D" uid="uid://bmgq4gg4x2qlw" path="res://assets/wall.jpg" id="2_dbc8d"]
+[ext_resource type="Texture2D" uid="uid://cgcnd0f12njn0" path="res://assets/office_wall_s.png" id="2_dbc8d"]
 [ext_resource type="PackedScene" uid="uid://7cco8vs3ujcd" path="res://scenes/bullet/bullet.tscn" id="3_30cjc"]
 [ext_resource type="PackedScene" uid="uid://b4qgk55k1eoea" path="res://scenes/entities/hostage.tscn" id="5_svj52"]
 [ext_resource type="PackedScene" uid="uid://7rlisy6fltdx" path="res://scenes/entities/enemy.tscn" id="6_f5vjv"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://de64cvcxk2xvi" path="res://scenes/inventory/inventory.tscn" id="11_ab0y2"]
 [ext_resource type="PackedScene" uid="uid://cel4350f1mliv" path="res://scenes/inventory/item_container/item_container.tscn" id="12_5budp"]
 [ext_resource type="PackedScene" uid="uid://dw5mfj181k0uo" path="res://scenes/draggable/draggable_area/draggable_area.tscn" id="13_vnchs"]
-[ext_resource type="PackedScene" uid="uid://c7mm630w1dga0" path="res://scenes/bouncers/pan.tscn" id="14_uar2a"]
+[ext_resource type="PackedScene" uid="uid://d1nvcexqedmvp" path="res://scenes/bouncers/pan.tscn" id="14_uar2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr1ax"]
 size = Vector2(31, 600.5)
