@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4qgk55k1eoea"]
 
-[ext_resource type="Texture2D" uid="uid://b0tmicutmrs5d" path="res://assets/hostage_temp.png" id="1_ckisp"]
 [ext_resource type="Script" path="res://scenes/entities/entity.gd" id="1_keurr"]
+[ext_resource type="Texture2D" uid="uid://d2w3f8j7omdfh" path="res://assets/Civilian Icon.svg" id="2_6h0fn"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gdg66"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_esbne"]
 radius = 128.0
 
 [node name="Hostage" type="Area2D" groups=["hostage"]]
@@ -11,9 +11,11 @@ scale = Vector2(0.1, 0.1)
 script = ExtResource("1_keurr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ckisp")
+texture = ExtResource("2_6h0fn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_gdg66")
+position = Vector2(0, 10)
+scale = Vector2(1.50596, 0.673077)
+shape = SubResource("CircleShape2D_esbne")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
