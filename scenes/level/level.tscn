@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bybpi3mb3ch41"]
+[gd_scene load_steps=17 format=3 uid="uid://bybpi3mb3ch41"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_jvlfj"]
 [ext_resource type="Texture2D" uid="uid://b1l7u2jopauws" path="res://assets/portal_tile_24x24_black_chocolate_close_up_1.png" id="1_lvcir"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://de64cvcxk2xvi" path="res://scenes/inventory/inventory.tscn" id="11_ab0y2"]
 [ext_resource type="PackedScene" uid="uid://cel4350f1mliv" path="res://scenes/inventory/item_container/item_container.tscn" id="12_5budp"]
 [ext_resource type="PackedScene" uid="uid://dw5mfj181k0uo" path="res://scenes/draggable/draggable_area/draggable_area.tscn" id="13_vnchs"]
+[ext_resource type="PackedScene" uid="uid://c7mm630w1dga0" path="res://scenes/bouncers/pan.tscn" id="14_uar2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr1ax"]
 size = Vector2(31, 600.5)
@@ -20,7 +21,7 @@ size = Vector2(31, 600.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmrmc"]
 size = Vector2(602, 30.5)
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_jvlfj")
 
 [node name="Floor Sprite" type="Sprite2D" parent="."]
@@ -70,6 +71,7 @@ texture = ExtResource("2_dbc8d")
 [node name="Bullet" parent="." instance=ExtResource("3_30cjc")]
 position = Vector2(182.102, 492.693)
 dir = 30
+rotation = 0.523599
 
 [node name="Enemy" parent="." instance=ExtResource("6_f5vjv")]
 position = Vector2(115.547, 286.557)
@@ -87,11 +89,7 @@ position = Vector2(238, 247)
 scale = Vector2(-0.0599999, -0.0599999)
 
 [node name="Hostage" parent="." instance=ExtResource("5_svj52")]
-position = Vector2(432, 246)
-
-[node name="Wall" parent="." instance=ExtResource("9_jvpa2")]
-position = Vector2(389, 86)
-rotation = -0.785398
+position = Vector2(381, 193)
 
 [node name="Wall2" parent="." instance=ExtResource("9_jvpa2")]
 position = Vector2(330, 511)
@@ -127,3 +125,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 grow_vertical = 1
 item = ExtResource("7_ny1xu")
+
+[node name="Pan" parent="." instance=ExtResource("14_uar2a")]
+position = Vector2(370, 83)
+rotation = 0.174533
+scale = Vector2(0.6, 0.6)

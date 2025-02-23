@@ -1,14 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://dxr8fv8j7hbiq"]
+[gd_scene load_steps=9 format=4 uid="uid://dxr8fv8j7hbiq"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_b2lrf"]
 [ext_resource type="TileSet" uid="uid://b7now1w4vy7up" path="res://assets/level_tileset.tres" id="1_tg0k3"]
 [ext_resource type="PackedScene" uid="uid://de64cvcxk2xvi" path="res://scenes/inventory/inventory.tscn" id="3_c7jn7"]
 [ext_resource type="PackedScene" uid="uid://cel4350f1mliv" path="res://scenes/inventory/item_container/item_container.tscn" id="4_f51y8"]
-[ext_resource type="PackedScene" uid="uid://d4jd5ckhspu2s" path="res://scenes/portal/portal.tscn" id="5_a5wnl"]
-[ext_resource type="PackedScene" uid="uid://ln8w5jsoyhm0" path="res://scenes/gravity_well/gravity_well.tscn" id="6_qpcxr"]
-[ext_resource type="PackedScene" uid="uid://bcmy7oah35r0f" path="res://scenes/bouncers/wall.tscn" id="7_yt5lh"]
 [ext_resource type="PackedScene" uid="uid://dw5mfj181k0uo" path="res://scenes/draggable/draggable_area/draggable_area.tscn" id="8_ctmw0"]
-[ext_resource type="PackedScene" uid="uid://pg6rgbxsai7b" path="res://scenes/bouncers/corner.tscn" id="8_eb3qg"]
 [ext_resource type="Texture2D" uid="uid://d2w3f8j7omdfh" path="res://assets/Civilian Icon.svg" id="9_yvqyw"]
 [ext_resource type="Texture2D" uid="uid://c7hdumqp06bj0" path="res://assets/Enemy Icon.svg" id="10_ky4cg"]
 [ext_resource type="PackedScene" uid="uid://quoini55wlda" path="res://scenes/entities/shooter.tscn" id="12_uenog"]
@@ -50,22 +46,18 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Item" parent="Inventory" instance=ExtResource("4_f51y8")]
 layout_mode = 1
-item = ExtResource("5_a5wnl")
 preview_scale = Vector2(0.15, 0.15)
 
 [node name="Item2" parent="Inventory" instance=ExtResource("4_f51y8")]
 layout_mode = 1
-item = ExtResource("6_qpcxr")
 preview_scale = Vector2(0.05, 0.05)
 
 [node name="Item3" parent="Inventory" instance=ExtResource("4_f51y8")]
 layout_mode = 1
-item = ExtResource("7_yt5lh")
 preview_scale = Vector2(0.5, 0.5)
 
 [node name="Item4" parent="Inventory" instance=ExtResource("4_f51y8")]
 layout_mode = 1
-item = ExtResource("8_eb3qg")
 preview_scale = Vector2(0.5, 0.5)
 item_rotation = 90.0
 

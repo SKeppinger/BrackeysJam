@@ -6,6 +6,8 @@ extends Control
 @export var item_rotation: float = 0
 
 func setup(cell_size) -> void:
+	if not item:
+		return
 	var item_preview = item.instantiate()
 	size = Vector2(cell_size, cell_size)
 	item_preview.position.x = cell_size/2

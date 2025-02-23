@@ -4,28 +4,33 @@
 [ext_resource type="Texture2D" uid="uid://bep27fy218xxv" path="res://assets/office_wall.png" id="3_4bgdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5syw"]
-size = Vector2(20, 44)
+size = Vector2(12, 96)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayi4y"]
-size = Vector2(20, 64)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sibw"]
+size = Vector2(20, 15)
 
 [node name="Corner" type="StaticBody2D" groups=["bouncer"]]
 
-[node name="OfficeWall" type="Sprite2D" parent="."]
-position = Vector2(-1, 3)
-texture = ExtResource("3_4bgdh")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-16, -19)
+rotation = -1.5708
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_l21ob")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-23, -7)
+position = Vector2(-24, -26)
 shape = SubResource("RectangleShape2D_n5syw")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 25)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_ayi4y")
 
 [node name="draggable" parent="." instance=ExtResource("2_dp5rx")]
 offset_left = -36.0
 offset_top = -35.0
 offset_right = 39.0
 offset_bottom = 40.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 29.5)
+shape = SubResource("RectangleShape2D_4sibw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-31, 23, -28, 29, -24, 33, -19, 35, -20, 22)

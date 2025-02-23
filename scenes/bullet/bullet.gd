@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var dir = 0
 @export var SPEED = 400.0
 @onready var line = $Line2D
-@onready var line2 = $Line2D2
 @onready var point = $Node2D
 @onready var ray = $RayCast2D
 
