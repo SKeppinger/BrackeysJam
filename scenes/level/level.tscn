@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://de64cvcxk2xvi" path="res://scenes/inventory/inventory.tscn" id="11_ab0y2"]
 [ext_resource type="PackedScene" uid="uid://cel4350f1mliv" path="res://scenes/inventory/item_container/item_container.tscn" id="12_5budp"]
 [ext_resource type="PackedScene" uid="uid://dw5mfj181k0uo" path="res://scenes/draggable/draggable_area/draggable_area.tscn" id="13_vnchs"]
-[ext_resource type="PackedScene" uid="uid://c7mm630w1dga0" path="res://scenes/bouncers/pan.tscn" id="14_uar2a"]
+[ext_resource type="PackedScene" path="res://scenes/bouncers/pan.tscn" id="14_uar2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr1ax"]
 size = Vector2(31, 600.5)
