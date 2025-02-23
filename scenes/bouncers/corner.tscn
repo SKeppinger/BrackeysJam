@@ -1,35 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://pg6rgbxsai7b"]
+[gd_scene load_steps=5 format=3 uid="uid://pg6rgbxsai7b"]
 
-[ext_resource type="Texture2D" uid="uid://bmgq4gg4x2qlw" path="res://assets/wall.jpg" id="1_3r2gf"]
+[ext_resource type="Texture2D" uid="uid://djcr2ngxg2i1x" path="res://assets/Pipe.png" id="1_l21ob"]
 [ext_resource type="PackedScene" uid="uid://cuvpetq04cs55" path="res://scenes/draggable/draggable.tscn" id="2_dp5rx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5syw"]
-size = Vector2(10, 64)
+size = Vector2(12, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sibw"]
+size = Vector2(20, 15)
 
 [node name="Corner" type="StaticBody2D" groups=["bouncer"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-25, 1)
-shape = SubResource("RectangleShape2D_n5syw")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-25, 0.5625)
-scale = Vector2(0.04, 0.126509)
-texture = ExtResource("1_3r2gf")
+position = Vector2(-16, -19)
+rotation = -1.5708
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_l21ob")
+flip_h = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(2, 27)
-rotation = 1.5708
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24, -26)
 shape = SubResource("RectangleShape2D_n5syw")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(2, 27)
-rotation = 1.5708
-scale = Vector2(0.04, 0.126509)
-texture = ExtResource("1_3r2gf")
 
 [node name="draggable" parent="." instance=ExtResource("2_dp5rx")]
 offset_left = -36.0
 offset_top = -35.0
 offset_right = 39.0
 offset_bottom = 40.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 29.5)
+shape = SubResource("RectangleShape2D_4sibw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-31, 23, -28, 29, -24, 33, -19, 35, -20, 22)

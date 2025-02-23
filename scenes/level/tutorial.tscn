@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=4 uid="uid://dxr8fv8j7hbiq"]
+[gd_scene load_steps=11 format=4 uid="uid://csurjaavfl4do"]
 
-[ext_resource type="Texture2D" uid="uid://r5hoywesobn" path="res://assets/office_tileset.png" id="1_dwbed"]
-[ext_resource type="PackedScene" uid="uid://7cco8vs3ujcd" path="res://scenes/bullet/bullet.tscn" id="2_ygjvx"]
-[ext_resource type="PackedScene" uid="uid://pg6rgbxsai7b" path="res://scenes/bouncers/corner.tscn" id="3_7nr2x"]
-[ext_resource type="PackedScene" uid="uid://c7mm630w1dga0" path="res://scenes/bouncers/pan.tscn" id="4_wjtxy"]
+[ext_resource type="Script" path="res://scenes/level/level.gd" id="1_si2ty"]
+[ext_resource type="Texture2D" uid="uid://r5hoywesobn" path="res://assets/office_tileset.png" id="2_cjxuq"]
+[ext_resource type="PackedScene" uid="uid://dw5mfj181k0uo" path="res://scenes/draggable/draggable_area/draggable_area.tscn" id="4_cms0i"]
+[ext_resource type="PackedScene" uid="uid://d4jd5ckhspu2s" path="res://scenes/portal/portal.tscn" id="7_ghhtt"]
+[ext_resource type="PackedScene" uid="uid://ln8w5jsoyhm0" path="res://scenes/gravity_well/gravity_well.tscn" id="8_7a2r0"]
+[ext_resource type="PackedScene" uid="uid://de64cvcxk2xvi" path="res://scenes/inventory/inventory.tscn" id="12_wbnq7"]
+[ext_resource type="PackedScene" uid="uid://cel4350f1mliv" path="res://scenes/inventory/item_container/item_container.tscn" id="13_mam6d"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ig6rj"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_txj4d"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1a1r"]
-texture = ExtResource("1_dwbed")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wlj5"]
+texture = ExtResource("2_cjxuq")
 0:0/size_in_atlas = Vector2i(4, 4)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10.6667, 32, -10, 32, 10.6667, -32, 10.6667)
@@ -90,28 +93,51 @@ texture = ExtResource("1_dwbed")
 28:8/0 = 0
 28:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10.6667, 32, -10, 32, 10.6667, -32, 10.6667)
 
-[sub_resource type="TileSet" id="TileSet_kym3o"]
+[sub_resource type="TileSet" id="TileSet_tjgld"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_ig6rj")
-sources/4 = SubResource("TileSetAtlasSource_m1a1r")
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_txj4d")
+sources/4 = SubResource("TileSetAtlasSource_4wlj5")
 
-[node name="TestTileset" type="Node2D"]
-position = Vector2(-14, -197)
+[node name="Level" type="Node2D"]
+script = ExtResource("1_si2ty")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(-166, -397)
-scale = Vector2(1.5, 1.5)
-tile_map_data = PackedByteArray("AAACAAYABAAEAAAAAAANAAYABAAIAAAAAAANAAwABAAIAAQAAAADAAwABAAMAAAAAAAEAAwABAAMAAAAAAAFAAwABAAMAAAAAAAGAAwABAAMAAAAAAAHAAwABAAUAAgAAAAIAAwABAAMAAAAAAAJAAwABAAMAAAAAAAKAAwABAAMAAAAAAALAAwABAAMAAAAAAAMAAwABAAMAAAAAAANAAcABAAQAAAAAAANAAgABAAQAAAAAAANAAkABAAQAAAAAAANAAoABAAQAAAAAAANAAsABAAQAAAAAAACAAcABAAUAAAAAAACAAgABAAUAAAAAAACAAkABAAUAAAAAAACAAoABAAUAAAAAAACAAsABAAUAAAAAAADAAYABAAAAAAAAAAEAAYABAAAAAAAAAAFAAYABAAAAAAAAAAGAAYABAAAAAAAAAAHAAYABAAQAAgAAAAIAAYABAAAAAAAAAAJAAYABAAAAAAAAAAKAAYABAAAAAAAAAALAAYABAAAAAAAAAAMAAYABAAAAAAAAAADAAsABAAAAAgAAAAEAAsABAAAAAgAAAAFAAsABAAAAAgAAAAGAAsABAAAAAgAAAAHAAsABAAYAAAAAAAIAAsABAAAAAgAAAAJAAsABAAAAAgAAAAKAAsABAAAAAgAAAALAAsABAAAAAgAAAAMAAsABAAAAAgAAAAMAAoABAAAAAgAAAAMAAkABAAAAAgAAAAMAAgABAAAAAgAAAAMAAcABAAAAAgAAAALAAcABAAAAAgAAAAKAAcABAAAAAgAAAAJAAcABAAAAAgAAAAIAAcABAAAAAgAAAAHAAcABAAYAAAAAAAGAAcABAAAAAgAAAAFAAcABAAAAAgAAAAEAAcABAAAAAgAAAADAAcABAAAAAgAAAADAAgABAAAAAgAAAADAAkABAAAAAgAAAADAAoABAAAAAgAAAAEAAoABAAAAAgAAAAFAAoABAAAAAgAAAAGAAoABAAAAAgAAAAHAAoABAAUAAQAAAAIAAoABAAAAAgAAAAJAAoABAAAAAgAAAAKAAoABAAAAAgAAAALAAoABAAAAAgAAAALAAkABAAAAAgAAAALAAgABAAAAAgAAAAKAAgABAAAAAgAAAAJAAgABAAAAAgAAAAIAAgABAAAAAgAAAAHAAgABAAYAAQAAAAHAAkABAAAAAgAAAAIAAkABAAAAAgAAAAJAAkABAAAAAgAAAAKAAkABAAAAAgAAAAGAAkABAAAAAgAAAAFAAkABAAAAAgAAAAEAAgABAAAAAgAAAAFAAgABAAAAAgAAAAGAAgABAAAAAgAAAAEAAkABAAAAAgAAAACAAwABAAEAAQAAAA=")
-tile_set = SubResource("TileSet_kym3o")
+position = Vector2(192, 0)
+tile_map_data = PackedByteArray("AAABAAAABAAAAAAAAAACAAAABAAAAAAAAAADAAAABAAAAAAAAAAEAAAABAAAAAAAAAAFAAAABAAAAAAAAAAGAAAABAAAAAAAAAAHAAAABAAAAAAAAAAIAAAABAAAAAAAAAAJAAAABAAAAAAAAAAKAAAABAAAAAAAAAAAAAAABAAEAAAAAAALAAAABAAIAAAAAAALAAYABAAIAAQAAAAAAAYABAAEAAQAAAABAAYABAAMAAAAAAACAAYABAAMAAAAAAADAAYABAAMAAAAAAAEAAYABAAMAAAAAAAFAAYABAAMAAAAAAAGAAYABAAMAAAAAAAHAAYABAAMAAAAAAAIAAYABAAMAAAAAAAJAAYABAAMAAAAAAAKAAYABAAMAAAAAAAAAAEABAAUAAAAAAAAAAIABAAUAAAAAAAAAAMABAAUAAAAAAAAAAQABAAUAAAAAAAAAAUABAAUAAAAAAALAAEABAAQAAAAAAALAAIABAAQAAAAAAALAAMABAAQAAAAAAALAAQABAAQAAAAAAALAAUABAAQAAAAAAABAAEABAAAAAgAAAACAAEABAAAAAgAAAADAAEABAAAAAgAAAAEAAEABAAAAAgAAAAFAAEABAAAAAgAAAAGAAEABAAAAAgAAAAHAAEABAAAAAgAAAAIAAEABAAAAAgAAAAJAAEABAAAAAgAAAAKAAEABAAAAAgAAAAKAAIABAAAAAgAAAAKAAMABAAAAAgAAAAKAAQABAAAAAgAAAAKAAUABAAAAAgAAAAJAAUABAAAAAgAAAAIAAUABAAAAAgAAAAHAAUABAAAAAgAAAAGAAUABAAAAAgAAAAFAAUABAAAAAgAAAAFAAQABAAAAAgAAAAEAAUABAAAAAgAAAADAAUABAAAAAgAAAACAAUABAAAAAgAAAABAAUABAAAAAgAAAABAAQABAAAAAgAAAABAAMABAAAAAgAAAABAAIABAAAAAgAAAACAAIABAAAAAgAAAACAAMABAAAAAgAAAACAAQABAAAAAgAAAADAAQABAAAAAgAAAADAAMABAAAAAgAAAAEAAMABAAAAAgAAAAEAAIABAAAAAgAAAAEAAQABAAAAAgAAAAFAAMABAAAAAgAAAAFAAIABAAAAAgAAAADAAIABAAAAAgAAAAGAAQABAAAAAgAAAAHAAQABAAAAAgAAAAHAAMABAAAAAgAAAAHAAIABAAAAAgAAAAGAAIABAAAAAgAAAAGAAMABAAAAAgAAAAIAAMABAAAAAgAAAAIAAQABAAAAAgAAAAJAAQABAAAAAgAAAAJAAMABAAAAAgAAAAJAAIABAAAAAgAAAAIAAIABAAAAAgAAAA=")
+tile_set = SubResource("TileSet_tjgld")
 
-[node name="Bullet" parent="." instance=ExtResource("2_ygjvx")]
-position = Vector2(296, 616)
-dir = 45
-SPEED = 100.0
+[node name="Wall Collision" type="StaticBody2D" parent="."]
 
-[node name="Corner" parent="." instance=ExtResource("3_7nr2x")]
-position = Vector2(180, 494)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall Collision"]
+build_mode = 1
+polygon = PackedVector2Array(234, 41, 234, 406, 918, 406, 918, 42)
 
-[node name="Pan" parent="." instance=ExtResource("4_wjtxy")]
-position = Vector2(435, 392)
+[node name="DraggableArea" parent="." instance=ExtResource("4_cms0i")]
+
+[node name="Inventory" parent="." instance=ExtResource("12_wbnq7")]
+offset_top = 552.0
+offset_right = 80.0
+offset_bottom = 592.0
+
+[node name="Item" parent="Inventory" instance=ExtResource("13_mam6d")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 1
+grow_vertical = 1
+item = ExtResource("7_ghhtt")
+
+[node name="Item2" parent="Inventory" instance=ExtResource("13_mam6d")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_vertical = 1
+item = ExtResource("8_7a2r0")
