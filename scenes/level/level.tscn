@@ -70,6 +70,7 @@ texture = ExtResource("2_dbc8d")
 [node name="Bullet" parent="." instance=ExtResource("3_30cjc")]
 position = Vector2(182.102, 492.693)
 dir = 30
+SPEED = 15.0
 
 [node name="Enemy" parent="." instance=ExtResource("6_f5vjv")]
 position = Vector2(115.547, 286.557)
