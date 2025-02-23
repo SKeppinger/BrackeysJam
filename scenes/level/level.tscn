@@ -97,7 +97,7 @@ position = Vector2(330, 511)
 rotation = 0.785398
 
 [node name="Corner" parent="." instance=ExtResource("10_v4v04")]
-position = Vector2(100, 551)
+position = Vector2(103, 509)
 
 [node name="Inventory" parent="." instance=ExtResource("11_ab0y2")]
 offset_left = 709.0
