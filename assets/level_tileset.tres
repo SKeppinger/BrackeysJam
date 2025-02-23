@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://dxr8fv8j7hbiq"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://b7now1w4vy7up"]
 
-[ext_resource type="Texture2D" uid="uid://r5hoywesobn" path="res://assets/office_tileset.png" id="1_dwbed"]
-[ext_resource type="PackedScene" uid="uid://7cco8vs3ujcd" path="res://scenes/bullet/bullet.tscn" id="2_ygjvx"]
+[ext_resource type="Texture2D" uid="uid://r5hoywesobn" path="res://assets/office_tileset.png" id="1_7v2sr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_txj4d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8r70"]
-texture = ExtResource("1_dwbed")
+texture = ExtResource("1_7v2sr")
 0:0/size_in_atlas = Vector2i(4, 4)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10.6667, 32, -10, 32, 10.6667, -32, 10.6667)
@@ -88,21 +87,8 @@ texture = ExtResource("1_dwbed")
 28:8/0 = 0
 28:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10.6667, 32, -10, 32, 10.6667, -32, 10.6667)
 
-[sub_resource type="TileSet" id="TileSet_kym3o"]
+[resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_txj4d")
 sources/4 = SubResource("TileSetAtlasSource_p8r70")
-
-[node name="TestTileset" type="Node2D"]
-position = Vector2(-14, -197)
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(-52, -137)
-tile_map_data = PackedByteArray("AAACAAYABAAEAAAAAAANAAYABAAIAAAAAAANAAwABAAIAAQAAAADAAwABAAMAAAAAAAEAAwABAAMAAAAAAAFAAwABAAMAAAAAAAGAAwABAAMAAAAAAAHAAwABAAUAAgAAAAIAAwABAAMAAAAAAAJAAwABAAMAAAAAAAKAAwABAAMAAAAAAALAAwABAAMAAAAAAAMAAwABAAMAAAAAAANAAcABAAQAAAAAAANAAgABAAQAAAAAAANAAkABAAQAAAAAAANAAoABAAQAAAAAAANAAsABAAQAAAAAAACAAcABAAUAAAAAAACAAgABAAUAAAAAAACAAkABAAUAAAAAAACAAoABAAUAAAAAAACAAsABAAUAAAAAAADAAYABAAAAAAAAAAEAAYABAAAAAAAAAAFAAYABAAAAAAAAAAGAAYABAAAAAAAAAAHAAYABAAQAAgAAAAIAAYABAAAAAAAAAAJAAYABAAAAAAAAAAKAAYABAAAAAAAAAALAAYABAAAAAAAAAAMAAYABAAAAAAAAAADAAsABAAAAAgAAAAEAAsABAAAAAgAAAAFAAsABAAAAAgAAAAGAAsABAAAAAgAAAAHAAsABAAYAAAAAAAIAAsABAAAAAgAAAAJAAsABAAAAAgAAAAKAAsABAAAAAgAAAALAAsABAAAAAgAAAAMAAsABAAAAAgAAAAMAAoABAAAAAgAAAAMAAkABAAAAAgAAAAMAAgABAAAAAgAAAAMAAcABAAAAAgAAAALAAcABAAAAAgAAAAKAAcABAAAAAgAAAAJAAcABAAAAAgAAAAIAAcABAAAAAgAAAAHAAcABAAYAAAAAAAGAAcABAAAAAgAAAAFAAcABAAAAAgAAAAEAAcABAAAAAgAAAADAAcABAAAAAgAAAADAAgABAAAAAgAAAADAAkABAAAAAgAAAADAAoABAAAAAgAAAAEAAoABAAAAAgAAAAFAAoABAAAAAgAAAAGAAoABAAAAAgAAAAHAAoABAAUAAQAAAAIAAoABAAAAAgAAAAJAAoABAAAAAgAAAAKAAoABAAAAAgAAAALAAoABAAAAAgAAAALAAkABAAAAAgAAAALAAgABAAAAAgAAAAKAAgABAAAAAgAAAAJAAgABAAAAAgAAAAIAAgABAAAAAgAAAAHAAgABAAYAAQAAAAHAAkABAAAAAgAAAAIAAkABAAAAAgAAAAJAAkABAAAAAgAAAAKAAkABAAAAAgAAAAGAAkABAAAAAgAAAAFAAkABAAAAAgAAAAEAAgABAAAAAgAAAAFAAgABAAAAAgAAAAGAAgABAAAAAgAAAAEAAkABAAAAAgAAAACAAwABAAEAAQAAAA=")
-tile_set = SubResource("TileSet_kym3o")
-
-[node name="Bullet" parent="." instance=ExtResource("2_ygjvx")]
-position = Vector2(229, 604)
-dir = 45
-SPEED = 100.0

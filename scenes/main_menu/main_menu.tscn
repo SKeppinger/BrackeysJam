@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdj87t1on3aao"]
+[gd_scene load_steps=7 format=4 uid="uid://bdj87t1on3aao"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_f82u4"]
 [ext_resource type="FontFile" uid="uid://ccryk4uiat803" path="res://assets/fonts/SunnyspellsRegular-MV9ze.otf" id="2_xw5p0"]
-[ext_resource type="PackedScene" uid="uid://bybpi3mb3ch41" path="res://scenes/level/level.tscn" id="3_7fycj"]
+[ext_resource type="TileSet" uid="uid://b7now1w4vy7up" path="res://assets/level_tileset.tres" id="3_s7nah"]
+[ext_resource type="PackedScene" uid="uid://7cco8vs3ujcd" path="res://scenes/bullet/bullet.tscn" id="4_byb3l"]
+[ext_resource type="PackedScene" uid="uid://pg6rgbxsai7b" path="res://scenes/bouncers/corner.tscn" id="5_bxp1d"]
+[ext_resource type="PackedScene" uid="uid://ln8w5jsoyhm0" path="res://scenes/gravity_well/gravity_well.tscn" id="6_7su5r"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -75,8 +78,31 @@ theme_override_fonts/font = ExtResource("2_xw5p0")
 theme_override_font_sizes/font_size = 200
 text = "Misfire"
 
-[node name="Area2D" parent="." instance=ExtResource("3_7fycj")]
-position = Vector2(525, 23)
+[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["bouncer"]]
+position = Vector2(-125, 404)
+rotation = -0.501477
+tile_map_data = PackedByteArray("AAAJAAQABAAEAAAAAAAQAAQABAAIAAAAAAAKAAYABAAMAAAAAAALAAYABAAMAAAAAAAMAAYABAAMAAAAAAANAAYABAAMAAAAAAAOAAYABAAMAAAAAAAOAAUABAAAAAgAAAAPAAUABAAAAAgAAAAPAAYABAAMAAAAAAAKAAUABAAAAAgAAAALAAUABAAAAAgAAAAMAAUABAAAAAgAAAANAAUABAAAAAgAAAAQAAYABAAIAAQAAAAQAAUABAAQAAAAAAAKAAQABAAAAAAAAAALAAQABAAAAAAAAAAMAAQABAAAAAAAAAANAAQABAAAAAAAAAAOAAQABAAAAAAAAAAPAAQABAAAAAAAAAAJAAUABAAUAAAAAAAJAAYABAAEAAQAAAA=")
+tile_set = ExtResource("3_s7nah")
+
+[node name="Bullet" parent="." instance=ExtResource("4_byb3l")]
+position = Vector2(895, 275)
+SPEED = 300.0
+
+[node name="Corner2" parent="." instance=ExtResource("5_bxp1d")]
+position = Vector2(614, 379)
+rotation = 0.846344
+scale = Vector2(0.774141, 0.774141)
+
+[node name="Corner" parent="." instance=ExtResource("5_bxp1d")]
+position = Vector2(935, 250)
+rotation = 3.97804
+scale = Vector2(0.747173, 0.747173)
+
+[node name="GravityWell" parent="." instance=ExtResource("6_7su5r")]
+position = Vector2(762, 317)
+rotation = -0.790461
+scale = Vector2(0.0588104, 0.0588104)
+gravity_strength = 0.01
 
 [connection signal="pressed" from="ColorRect/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ColorRect/Quit" to="." method="_on_quit_pressed"]

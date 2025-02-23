@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgjqfkmssuvd0"]
+[gd_scene load_steps=6 format=3 uid="uid://quoini55wlda"]
 
 [ext_resource type="Script" path="res://scenes/entities/shooter.gd" id="1_bxojd"]
 [ext_resource type="PackedScene" uid="uid://7cco8vs3ujcd" path="res://scenes/bullet/bullet.tscn" id="2_5qf2y"]
@@ -15,7 +15,6 @@ bullet_spawn = ExtResource("2_5qf2y")
 
 [node name="bullet_exit_point" type="Node2D" parent="."]
 position = Vector2(165, -185)
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bio5h")
