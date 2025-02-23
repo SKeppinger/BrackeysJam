@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgjqfkmssuvd0"]
+
+[ext_resource type="Script" path="res://scenes/entities/shooter.gd" id="1_bxojd"]
+[ext_resource type="PackedScene" uid="uid://7cco8vs3ujcd" path="res://scenes/bullet/bullet.tscn" id="2_5qf2y"]
+[ext_resource type="Texture2D" uid="uid://2cal4irq6tjh" path="res://assets/Shooter Icon.svg" id="2_bio5h"]
+[ext_resource type="Texture2D" uid="uid://do7qouhc78ebm" path="res://assets/Shooter Hand.svg" id="3_a0xpx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_esbne"]
+radius = 128.0
+
+[node name="Shooter" type="Area2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_bxojd")
+bullet_spawn = ExtResource("2_5qf2y")
+
+[node name="bullet_exit_point" type="Node2D" parent="."]
+position = Vector2(165, -185)
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bio5h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -80)
+texture = ExtResource("3_a0xpx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+scale = Vector2(1.50596, 0.673077)
+shape = SubResource("CircleShape2D_esbne")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

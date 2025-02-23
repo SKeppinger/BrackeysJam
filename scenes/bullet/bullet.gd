@@ -31,11 +31,9 @@ func _process(delta: float) -> void:
 		ray.force_raycast_update()
 	else:
 		line.add_point(ray.target_position)
-		print(global_position)
-		print(to_global(ray.target_position))
-		print(calc_length(to_global(ray.target_position) - global_position))
 
 func _physics_process(delta: float) -> void:
+	print(global_position)
 	velocity += get_gravity() # for the gravity well, default is 0 so it won't affect the bullet if there is no gravity well
 	# stop velocity from changing using gravity
 	if velocity.length() > SPEED * 1.5:
