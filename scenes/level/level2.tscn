@@ -1,17 +1,18 @@
-[gd_scene load_steps=11 format=4 uid="uid://csurjaavfl4do"]
+[gd_scene load_steps=12 format=4 uid="uid://bhfnt5d2bb53q"]
 
-[ext_resource type="Script" path="res://scenes/level/level.gd" id="1_si2ty"]
-[ext_resource type="Texture2D" uid="uid://r5hoywesobn" path="res://assets/office_tileset.png" id="2_cjxuq"]
-[ext_resource type="PackedScene" uid="uid://dw5mfj181k0uo" path="res://scenes/draggable/draggable_area/draggable_area.tscn" id="4_cms0i"]
-[ext_resource type="PackedScene" uid="uid://d4jd5ckhspu2s" path="res://scenes/portal/portal.tscn" id="7_ghhtt"]
-[ext_resource type="PackedScene" uid="uid://ln8w5jsoyhm0" path="res://scenes/gravity_well/gravity_well.tscn" id="8_7a2r0"]
-[ext_resource type="PackedScene" uid="uid://de64cvcxk2xvi" path="res://scenes/inventory/inventory.tscn" id="12_wbnq7"]
-[ext_resource type="PackedScene" uid="uid://cel4350f1mliv" path="res://scenes/inventory/item_container/item_container.tscn" id="13_mam6d"]
+[ext_resource type="Script" path="res://scenes/level/level.gd" id="1_83722"]
+[ext_resource type="Texture2D" uid="uid://r5hoywesobn" path="res://assets/office_tileset.png" id="2_bibw1"]
+[ext_resource type="PackedScene" uid="uid://dw5mfj181k0uo" path="res://scenes/draggable/draggable_area/draggable_area.tscn" id="3_dpsxj"]
+[ext_resource type="PackedScene" uid="uid://de64cvcxk2xvi" path="res://scenes/inventory/inventory.tscn" id="4_ji32i"]
+[ext_resource type="PackedScene" uid="uid://cel4350f1mliv" path="res://scenes/inventory/item_container/item_container.tscn" id="5_2ufjw"]
+[ext_resource type="PackedScene" path="res://scenes/entities/shooter.tscn" id="6_a01sn"]
+[ext_resource type="PackedScene" uid="uid://b4qgk55k1eoea" path="res://scenes/entities/hostage.tscn" id="7_a5n2w"]
+[ext_resource type="PackedScene" uid="uid://7rlisy6fltdx" path="res://scenes/entities/enemy.tscn" id="8_kfxro"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_txj4d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wlj5"]
-texture = ExtResource("2_cjxuq")
+texture = ExtResource("2_bibw1")
 0:0/size_in_atlas = Vector2i(4, 4)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10.6667, 32, -10, 32, 10.6667, -32, 10.6667)
@@ -99,45 +100,56 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_txj4d")
 sources/4 = SubResource("TileSetAtlasSource_4wlj5")
 
-[node name="Level3" type="Node2D"]
-script = ExtResource("1_si2ty")
+[node name="Level" type="Node2D" node_paths=PackedStringArray("shooter")]
+script = ExtResource("1_83722")
+shooter = NodePath("Shooter")
+hostages = Array[Node2D]([Object(Area2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(700, 271),"rotation":-1.5708,"scale":Vector2(0.1, 0.1),"skew":0.0,"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_pickable":true,"monitoring":true,"monitorable":true,"priority":0,"gravity_space_override":0,"gravity_point":false,"gravity_point_unit_distance":0.0,"gravity_point_center":Vector2(0, 1),"gravity_direction":Vector2(0, 1),"gravity":980.0,"linear_damp_space_override":0,"linear_damp":0.1,"angular_damp_space_override":0,"angular_damp":1.0,"audio_bus_override":false,"audio_bus_name":&"Master","script":Resource("res://scenes/entities/entity.gd"))
+])
+enemies = Array[Node2D]([Object(Area2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(550, 270),"rotation":-1.5708,"scale":Vector2(0.1, 0.1),"skew":0.0,"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_pickable":true,"monitoring":true,"monitorable":true,"priority":0,"gravity_space_override":0,"gravity_point":false,"gravity_point_unit_distance":0.0,"gravity_point_center":Vector2(0, 1),"gravity_direction":Vector2(0, 1),"gravity":980.0,"linear_damp_space_override":0,"linear_damp":0.1,"angular_damp_space_override":0,"angular_damp":1.0,"audio_bus_override":false,"audio_bus_name":&"Master","script":Resource("res://scenes/entities/entity.gd"))
+])
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(192, 0)
+position = Vector2(192, 64)
 tile_map_data = PackedByteArray("AAABAAAABAAAAAAAAAACAAAABAAAAAAAAAADAAAABAAAAAAAAAAEAAAABAAAAAAAAAAFAAAABAAAAAAAAAAGAAAABAAAAAAAAAAHAAAABAAAAAAAAAAIAAAABAAAAAAAAAAJAAAABAAAAAAAAAAKAAAABAAAAAAAAAAAAAAABAAEAAAAAAALAAAABAAIAAAAAAALAAYABAAIAAQAAAAAAAYABAAEAAQAAAABAAYABAAMAAAAAAACAAYABAAMAAAAAAADAAYABAAMAAAAAAAEAAYABAAMAAAAAAAFAAYABAAMAAAAAAAGAAYABAAMAAAAAAAHAAYABAAMAAAAAAAIAAYABAAMAAAAAAAJAAYABAAMAAAAAAAKAAYABAAMAAAAAAAAAAEABAAUAAAAAAAAAAIABAAUAAAAAAAAAAMABAAUAAAAAAAAAAQABAAUAAAAAAAAAAUABAAUAAAAAAALAAEABAAQAAAAAAALAAIABAAQAAAAAAALAAMABAAQAAAAAAALAAQABAAQAAAAAAALAAUABAAQAAAAAAABAAEABAAAAAgAAAACAAEABAAAAAgAAAADAAEABAAAAAgAAAAEAAEABAAAAAgAAAAFAAEABAAAAAgAAAAGAAEABAAAAAgAAAAHAAEABAAAAAgAAAAIAAEABAAAAAgAAAAJAAEABAAAAAgAAAAKAAEABAAAAAgAAAAKAAIABAAAAAgAAAAKAAMABAAAAAgAAAAKAAQABAAAAAgAAAAKAAUABAAAAAgAAAAJAAUABAAAAAgAAAAIAAUABAAAAAgAAAAHAAUABAAAAAgAAAAGAAUABAAAAAgAAAAFAAUABAAAAAgAAAAFAAQABAAAAAgAAAAEAAUABAAAAAgAAAADAAUABAAAAAgAAAACAAUABAAAAAgAAAABAAUABAAAAAgAAAABAAQABAAAAAgAAAABAAMABAAAAAgAAAABAAIABAAAAAgAAAACAAIABAAAAAgAAAACAAMABAAAAAgAAAACAAQABAAAAAgAAAADAAQABAAAAAgAAAADAAMABAAAAAgAAAAEAAMABAAAAAgAAAAEAAIABAAAAAgAAAAEAAQABAAAAAgAAAAFAAMABAAAAAgAAAAFAAIABAAAAAgAAAADAAIABAAAAAgAAAAGAAQABAAAAAgAAAAHAAQABAAAAAgAAAAHAAMABAAAAAgAAAAHAAIABAAAAAgAAAAGAAIABAAAAAgAAAAGAAMABAAAAAgAAAAIAAMABAAAAAgAAAAIAAQABAAAAAgAAAAJAAQABAAAAAgAAAAJAAMABAAAAAgAAAAJAAIABAAAAAgAAAAIAAIABAAAAAgAAAA=")
 tile_set = SubResource("TileSet_tjgld")
 
 [node name="Wall Collision" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall Collision"]
+position = Vector2(0, 64)
 build_mode = 1
 polygon = PackedVector2Array(234, 41, 234, 406, 918, 406, 918, 42)
 
-[node name="DraggableArea" parent="." instance=ExtResource("4_cms0i")]
+[node name="DraggableArea" parent="." instance=ExtResource("3_dpsxj")]
 
-[node name="Inventory" parent="." instance=ExtResource("12_wbnq7")]
+[node name="Inventory" parent="." instance=ExtResource("4_ji32i")]
 offset_top = 552.0
 offset_right = 80.0
 offset_bottom = 592.0
 
-[node name="Item" parent="Inventory" instance=ExtResource("13_mam6d")]
+[node name="Item" parent="Inventory" instance=ExtResource("5_2ufjw")]
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_horizontal = 1
-grow_vertical = 1
-item = ExtResource("7_ghhtt")
 
-[node name="Item2" parent="Inventory" instance=ExtResource("13_mam6d")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_right = 40.0
-offset_bottom = 40.0
-grow_vertical = 1
-item = ExtResource("8_7a2r0")
+[node name="Shooter" parent="." instance=ExtResource("6_a01sn")]
+position = Vector2(420, 271)
+rotation = 1.53589
+
+[node name="Hostage" parent="." instance=ExtResource("7_a5n2w")]
+position = Vector2(700, 271)
+rotation = -1.5708
+
+[node name="Enemy" parent="." instance=ExtResource("8_kfxro")]
+position = Vector2(550, 270)
+rotation = -1.5708
+
+[node name="Enemy2" parent="." instance=ExtResource("8_kfxro")]
+position = Vector2(861, 270)
+rotation = -1.5708
+
+[node name="Enemy3" parent="." instance=ExtResource("8_kfxro")]
+position = Vector2(765, 179)
+rotation = -1.5708
+
+[node name="Enemy4" parent="." instance=ExtResource("8_kfxro")]
+position = Vector2(765, 380)
+rotation = -1.5708

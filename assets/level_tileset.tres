@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c7mm630w1dga0" path="res://scenes/bouncers/pan.tscn" id="4_wjtxy"]
 >>>>>>> 5f1ffe181414f61efc65c04be60200b648e8ef70:scenes/level/test_tileset.tscn
 
+[sub_resource type="TileSet" id="TileSet_kym3o"]
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ig6rj"]
 
 <<<<<<< HEAD:assets/level_tileset.tres

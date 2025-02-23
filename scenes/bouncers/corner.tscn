@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://pg6rgbxsai7b"]
 
+[ext_resource type="Texture2D" uid="uid://djcr2ngxg2i1x" path="res://assets/Pipe.png" id="1_l21ob"]
 [ext_resource type="PackedScene" uid="uid://cuvpetq04cs55" path="res://scenes/draggable/draggable.tscn" id="2_dp5rx"]
-[ext_resource type="Texture2D" uid="uid://bep27fy218xxv" path="res://assets/office_wall.png" id="3_4bgdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5syw"]
 size = Vector2(12, 96)
@@ -23,10 +23,9 @@ position = Vector2(-24, -26)
 shape = SubResource("RectangleShape2D_n5syw")
 
 [node name="draggable" parent="." instance=ExtResource("2_dp5rx")]
-offset_left = -36.0
-offset_top = -35.0
-offset_right = 39.0
-offset_bottom = 40.0
+offset_left = -31.0
+offset_top = -75.0
+offset_bottom = 37.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-10, 29.5)
